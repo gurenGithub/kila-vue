@@ -1,7 +1,5 @@
 # feedback_system
 
-> 搜索后台 - 前端项目
-
 ## Build Setup
 
 ``` bash
