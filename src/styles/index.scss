@@ -1,0 +1,67 @@
+@charset "utf-8";
+@import './helpers/_core';
+@import './helpers/core/_media-queries';
+@import './commons/index';
+@import './components/index';
+@import './pages/index';
+
+
+
+
+// @import './commons/response.scss';
+
+body {
+  font-family: "Hiragino Sans GB", "Lantinghei SC", "华文细黑", "STHeiti", "微软雅黑", "Microsoft YaHei", "SimHei", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  color: $colorText;
+  font-size: $fontSize;
+  -webkit-font-smoothing: antialiased;
+  background-color: #F5F7FA;
+  // min-width: 750px;
+}
+
+.#{$css-prefix} {
+}
+
+.mobile{
+  display: none;
+}
+.pc{
+  display: none;
+}
+.clear:after{content:"."; display:block;height:0;clear:both;visibility:hidden;}
+@mixin clearfix(){
+  content:"."; display:block;height:0;clear:both;visibility:hidden;
+}
+
+.fade-enter-active {
+  animation:fade .35s;
+   
+ }
+ .fade-leave-active {
+   animation:fade .1s reverse;
+   
+ }
+
+ @keyframes fade{
+  0%{opacity: 0;} 
+  100%{opacity: 1;}
+ }
+
+.gotop{width: 40px;height: 40px;line-height: 36px;text-align: center;font-size: 20px;
+  color: #b3b3b3;background-color: rgb(255, 255, 255);border:1px solid #F5F7FA; box-shadow: 0 0 8px 2px #F5F7FA;
+position: fixed;right: 30px; bottom: 60px;cursor: pointer;border-radius: 3px; transition:all 120ms linear; 
+&:hover{
+   box-shadow: 0 0 8px 2px rgb(235, 240, 247);
+}
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+
+ 
+
+
+}

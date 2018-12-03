@@ -1,0 +1,15 @@
+
+$demo:'demo';
+
+.#{$demo}{
+
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0px;
+    text-align: center;
+    font-size: 100px;
+
+    span{
+        font-size:12px; 
+    }
+}

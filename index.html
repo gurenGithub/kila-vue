@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <title>kbuild - vue</title>
+    <% if(htmlWebpackPlugin.options.isProductiis){ %>
+        <% for (var css in htmlWebpackPlugin.files.css) { %>
+        <link href="<%=htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+        <% } %>
+    <% } %>
+  </head>
+  <body>
+    <div id="kbuild_container" class="box">
+      <router-view></router-view>
+    </div>
+    <% if(htmlWebpackPlugin.options.isProductiis){ %>
+      <script src="//cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <!-- 自动插入的话顺序会一直在下面，所以改为手动插入 -->
+      <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+      <script type="text/javascript" src="<%=htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+      <% } %>
+      <!-- 开发环境才加统计代码 -->
+      <div style="display: none">
+        <!-- 统计代码可加在这里 -->
+      </div>
+    <% } %>
+  </body>
+</html>
